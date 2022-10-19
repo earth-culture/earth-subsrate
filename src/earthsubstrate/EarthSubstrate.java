@@ -19,6 +19,7 @@ public class EarthSubstrate {
     public static void main(String[] args) {
         ServerEnvironmentVariables.loadVariablesFromFile(); //Load in environment variables before loading anything else 
         apiValidator = new ApiRequestValidator();
+        new SecureApiRequestListener().start();
     }
     
 }
