@@ -6,15 +6,19 @@ package earthsubstrate;
 
 /**
  *
- * @author christopher
+ * @author Christopher Brett
  */
 public class EarthSubstrate {
 
+    protected static ApiRequestValidator apiValidator;
+    protected static DatabaseConnectionPool databaseConnectionPool;
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //test
+        ServerEnvironmentVariables.loadVariablesFromFile(); //Load in environment variables before loading anything else 
+        apiValidator = new ApiRequestValidator();
     }
     
 }
