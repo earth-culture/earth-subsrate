@@ -1,0 +1,2 @@
+CULTURE_NAME#string#not set#120#1#F#body
+RECOVERY_EMAIL#string#email#120#not set#F#body

@@ -10,7 +10,6 @@ package earthsubstrate;
  */
 public class EarthSubstrate {
 
-    protected static ApiRequestValidator apiValidator;
     protected static DatabaseConnectionPool databaseConnectionPool;
     
     /**
@@ -18,7 +17,7 @@ public class EarthSubstrate {
      */
     public static void main(String[] args) {
         ServerEnvironmentVariables.loadVariablesFromFile(); //Load in environment variables before loading anything else 
-        apiValidator = new ApiRequestValidator();
+        databaseConnectionPool = new DatabaseConnectionPool();
         new SecureApiRequestListener().start();
     }
     

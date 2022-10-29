@@ -1,0 +1,2 @@
+CULTURE_ID#integer#not set#not set#not set#F#body
+EMAIL_VERIFICATION_CODE#string#not set#not set#not set#F#body

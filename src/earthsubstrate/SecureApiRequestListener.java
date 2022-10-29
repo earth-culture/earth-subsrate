@@ -39,7 +39,8 @@ public class SecureApiRequestListener extends Thread {
         if (ServerEnvironmentVariables.IN_TEST_MODE) { //HTTP
             try {
                 HttpServer server = HttpServer.create(new InetSocketAddress(ServerEnvironmentVariables.INCOMING_PORT), 0);
-                server.createContext("/", null);
+                //server.createContext("/", null);
+                server.createContext("/Culture", new CultureRequestHandler());
                 server.setExecutor(new ThreadPoolExecutor(6, 24, 30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100)));
                 server.start();
             } catch (IOException e) {
@@ -75,7 +76,8 @@ public class SecureApiRequestListener extends Thread {
                         }
                     }
                 });
-                httpsServer.createContext("/", null);
+                //httpsServer.createContext("/", null);
+                httpsServer.createContext("/Culture", new CultureRequestHandler());
                 httpsServer.setExecutor(new ThreadPoolExecutor(6, 24, 30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100)));
                 httpsServer.start();
             } catch (IOException | KeyManagementException | KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException | CertificateException e) {
